@@ -23,17 +23,14 @@ const App = () => {
     { name: 'Swiss Cheese', color: '#F1E1A8' },
   ];
 
-  // const[remainingIngredients, setRemainingIngredients] = useState(availableIngredients)
   const [stack, setStack] = useState([])
 
   const addToBurger = (newItem) => {
-    setStack([...stack, newItem])
-    // setRemainingIngredients(remainingIngredients.filter((ingredient) => ingredient.name !== newItem.name))
+    setStack([newItem, ...stack]) //adds to the top of existing
   }
 
   const removeFromBurger = (item) => {
     setStack(stack.filter((stackItem) => stackItem.name !== item.name))
-    // setRemainingIngredients([...remainingIngredients, item])
   }
 
   return (
