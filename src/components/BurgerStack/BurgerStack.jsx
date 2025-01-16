@@ -6,7 +6,7 @@ const BurgerStack = ({stack, removeFromBurger}) => {
         {stack.map((item) => (
             <li key={item.name} style={{backgroundColor: item.color}}>
                 <p>{item.name}</p>
-                <button onClick={() => removeFromBurger(item)}>Remove</button>
+                <button onClick={() => removeFromBurger(item)}><span className="material-symbols-outlined">close</span></button>
             </li>
         ))}
     </ul>
