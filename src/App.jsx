@@ -26,12 +26,13 @@ const App = () => {
   const [stack, setStack] = useState([])
 
   const addToBurger = (newItem) => {
-    setStack([newItem, ...stack]) //adds to the top of existing
+    setStack([newItem, ...stack]) //Notes: reversed the order so that newItem adds to the top of existing
   }
 
-  const removeFromBurger = (item) => {
-    setStack(stack.filter((stackItem) => stackItem.name !== item.name))
+  const removeFromBurger = (item, index) => {
+    setStack(stack.filter((item, i) => i !== index))
   }
+  //Notes: using index here because if Lettuce is selected twice, we can differentiate Lettuce-0 from Lettuce-1 and remove each individually
 
   return (
     <main>
